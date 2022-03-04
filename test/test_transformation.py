@@ -27,3 +27,7 @@ class TestTransformation(unittest.TestCase):
                 output,
                 equal_to([{"date": "2015-01-01", "total_amount": 51.0}])
             )
+
+
+if __name__ == '__main__':
+    unittest.main()

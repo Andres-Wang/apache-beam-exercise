@@ -51,3 +51,23 @@ class TestBeamFunctions(unittest.TestCase):
                 equal_to([["2015-01-01 00:00:00 UTC","10"],
                           ["2015-01-01 00:00:00 UTC","30"]])
             )
+
+    def test_map_date_and_transaction_amount(self):
+
+        data = [
+            ["2005-01-01 00:00:00 UTC", "30"]
+        ]
+
+        with TestPipeline() as p:
+
+            input = p | beam.Create(data)
+
+            output = input | beam.Map(map_date_and_transaction_amount, 0, 1)
+            assert_that(
+                output,
+                equal_to([('2005-01-01', 30.0)])
+            )
+
+
+if __name__ == '__main__':
+    unittest.main()

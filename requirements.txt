@@ -2,3 +2,4 @@ apache-beam[dataframe]
 pandas
 gcsfs
 pytest
+pyparsing==2.4.2
