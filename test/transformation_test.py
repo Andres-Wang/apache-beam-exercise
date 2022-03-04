@@ -13,7 +13,8 @@ class TransformationTest(unittest.TestCase):
         data = [
             ["2005-01-01 00:00:00 UTC","30"],
             ["2015-01-01 00:00:00 UTC","10"],
-            ["2015-01-01 00:00:00 UTC","30"]
+            ["2015-01-01 00:00:00 UTC","30"],
+            ["2015-01-01 00:00:00 UTC","21"]
         ]
 
         with TestPipeline() as p:
@@ -24,5 +25,5 @@ class TransformationTest(unittest.TestCase):
 
             assert_that(
                 output,
-                equal_to([{"date": "2015-01-01", "total_amount": 30.0}])
+                equal_to([{"date": "2015-01-01", "total_amount": 51.0}])
             )
