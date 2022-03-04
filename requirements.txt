@@ -1,3 +1,4 @@
 apache-beam[dataframe]
 pandas
 gcsfs
+pytest

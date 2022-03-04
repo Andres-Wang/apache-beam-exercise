@@ -6,7 +6,7 @@ import apache_beam as beam
 from src.helpers.beam_functions import aggregate_transaction_amount_by_date
 
 
-class TransformationTest(unittest.TestCase):
+class TestTransformation(unittest.TestCase):
 
     def test_transformation(self):
 
